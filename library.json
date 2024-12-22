@@ -23,6 +23,7 @@
       "atmelavr",
       "espressif32"
     ],
-    "dependencies": [ ]
+    "dependencies": [ 
+    ]
 }
   

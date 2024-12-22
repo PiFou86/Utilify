@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 
-class StringUtil {
+class StringUtils {
 public:
   static String padLeft(const String &value, char padChar, unsigned int length);
   static String padRight(const String &value, char padChar, unsigned int length);
