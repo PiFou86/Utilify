@@ -1,0 +1,28 @@
+{
+    "name": "Utilify",
+    "version": "1.0.0",
+    "description": "Base utilities for embedded systems",
+    "keywords": ["string", "platformio", "embedded"],
+    "authors": [
+      {
+        "name": "Pierre-François Léon",
+        "email": "pierrefrancois.leon@gmail.com",
+        "maintainer": true
+      }
+    ],
+    "excludeFiles": [
+      "main.cpp"
+    ],
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/PiFou86/Utilify.git"
+    },
+    "license": "MIT",
+    "frameworks": ["arduino"],
+    "platforms": [
+      "atmelavr",
+      "espressif32"
+    ],
+    "dependencies": [ ]
+}
+  
