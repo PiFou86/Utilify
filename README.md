@@ -2,8 +2,6 @@
 
 **Utilify** is a versatile library providing essential utilities for embedded systems, simplifying tasks such as string manipulation and device management. It is designed to work seamlessly with **Arduino** and **ESP32** platforms, making it a valuable addition to your embedded development toolkit.
 
----
-
 ## Features
 
 - Lightweight and efficient utility library.
@@ -11,8 +9,6 @@
 - Device management utilities for embedded platforms.
 - Compatible with **Arduino** and **ESP32**.
 - Easy to integrate into PlatformIO projects.
-
----
 
 ## Getting Started
 
@@ -63,8 +59,6 @@ void setup() {
 void loop() { ; }
 ```
 
----
-
 ## Utilities Overview
 
 ### String Manipulation
@@ -84,19 +78,9 @@ String deviceId = getId();
 Serial.println("Device ID: " + deviceId);
 ```
 
----
-
 ## Dependencies
 
 No additional dependencies are required, making **Utilify** lightweight and easy to use.
-
----
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
 
 ## Author
 
