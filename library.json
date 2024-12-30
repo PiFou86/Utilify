@@ -1,8 +1,8 @@
 {
     "name": "Utilify",
     "version": "1.0.0",
-    "description": "Base utilities for embedded systems",
-    "keywords": ["string", "platformio", "embedded"],
+    "description": "Utilify provides a collection of versatile utilities designed for embedded systems, simplifying string manipulation, device management, and general-purpose tasks for Arduino and ESP32 platforms.",
+    "keywords": ["string", "utilities", "embedded", "platformio", "arduino", "esp32"],
     "authors": [
       {
         "name": "Pierre-François Léon",

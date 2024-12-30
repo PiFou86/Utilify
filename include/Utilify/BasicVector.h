@@ -3,18 +3,18 @@
 // vector is not supported in Arduino
 #ifdef ARDUINO_AVR_UNO
 template <typename ElementType>
-class SimpleCollection {
+class BasicVector {
  private:
   ElementType *m_elements;
   unsigned int m_size;
   unsigned int m_capacity;
 
  public:
-  SimpleCollection() : m_elements(nullptr), m_size(0), m_capacity(0) {
+  BasicVector() : m_elements(nullptr), m_size(0), m_capacity(0) {
     this->m_capacity = 1;
     this->m_elements = new ElementType[this->m_capacity];
   }
-  SimpleCollection(const SimpleCollection &other)
+  BasicVector(const BasicVector &other)
       : m_elements(nullptr), m_size(0), m_capacity(0) {
     this->m_capacity = other.m_capacity;
     this->m_size = other.m_size;
@@ -23,14 +23,14 @@ class SimpleCollection {
       this->m_elements[i] = other.m_elements[i];
     }
   }
-  SimpleCollection(SimpleCollection &&other)
+  BasicVector(BasicVector &&other)
       : m_elements(nullptr), m_size(0), m_capacity(0) {
     this->m_capacity = other.m_capacity;
     this->m_size = other.m_size;
     this->m_elements = other.m_elements;
     other.m_elements = nullptr;
   }
-  SimpleCollection &operator=(const SimpleCollection &other) {
+  BasicVector &operator=(const BasicVector &other) {
     if (this != &other) {
       this->m_capacity = other.m_capacity;
       this->m_size = other.m_size;
@@ -44,7 +44,7 @@ class SimpleCollection {
     }
     return *this;
   }
-  SimpleCollection &operator=(SimpleCollection &&other) {
+  BasicVector &operator=(BasicVector &&other) {
     if (this != &other) {
       this->m_capacity = other.m_capacity;
       this->m_size = other.m_size;
@@ -56,7 +56,7 @@ class SimpleCollection {
     }
     return *this;
   }
-  ~SimpleCollection() { delete[] this->m_elements; }
+  ~BasicVector() { delete[] this->m_elements; }
 
   void push_back(const ElementType &element) {
     if (this->m_size == this->m_capacity) {
@@ -69,11 +69,8 @@ class SimpleCollection {
     if (this->m_size == this->m_capacity) {
       this->resize(this->m_capacity * 2);
     }
-#ifdef ESP32
-    this->m_elements[this->m_size] = std::move(element);
-#else
+
     this->m_elements[this->m_size] = element;
-#endif
     this->m_size++;
   }
 
@@ -92,6 +89,22 @@ class SimpleCollection {
   }
   unsigned int size() const { return this->m_size; }
   unsigned int capacity() const { return this->m_capacity; }
-
+  void clear() {
+    this->m_size = 0;
+  }
+  bool empty() const {
+    return this->m_size == 0;
+  }
+  ElementType *begin() { return this->m_elements; }
+  ElementType *end() { return this->m_elements + this->m_size; }
 };
+
+// replace std::vector with SimpleCollection
+template<typename T>
+using vector = BasicVector<T>;
+
+#elif defined(ESP32)
+#include <vector>
+template<typename T>
+using vector = std::vector<T>;
 #endif
