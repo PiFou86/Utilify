@@ -28,7 +28,7 @@ Timer timer(10_seconds, []() {
   Serial.print(millis() / 1000.0f);
   Serial.println(" - Hello from timer");
 });
-Timer timer2(500_mseconds, new ToggleLEDAction(LED_BUILTIN), false);
+Timer timer2(500_mseconds, new ToggleLEDAction(LED_BUILTIN), 0, false);
 Timer *timer3 = new Timer(5_seconds, []() {
   Serial.print("Time : ");
   Serial.print(millis() / 1000.0f);
