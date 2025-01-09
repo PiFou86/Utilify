@@ -1,12 +1,9 @@
 #include <Arduino.h>
-
 #include <Utilify/Action/Action.h>
 #include <Utilify/Action/ActionBase.h>
-
 #include <Utilify/BasicVector.h>
 #include <Utilify/Callback.h>
 #include <Utilify/StringUtils.h>
-
 #include <Utilify/Task/TaskAggregate.h>
 #include <Utilify/Task/Timer.h>
 
@@ -43,14 +40,18 @@ TaskAggregate taskAggregate;
 void setup() {
 #ifdef ARDUINO_AVR_UNO
   Serial.begin(9600);
-#elif defined(ESP32) || defined(ARDUINO_UNOR4_MINIMA) || defined(ARDUINO_UNOWIFIR4)
+#elif defined(ESP32) || defined(ARDUINO_UNOR4_MINIMA) || \
+    defined(ARDUINO_UNOWIFIR4)
   Serial.begin(115200);
 #else
 #error "Unsupported board"
 #endif
+
   Serial.println(StringUtils::padLeft("Hello", ' ', 10));
   Serial.println(StringUtils::padLeft(String(42), '0', 4));
   Serial.println(StringUtils::padLeft("0x" + String(42), '0', 4));
+  Serial.println(String(F("->")) + StringUtils::center("Hello", ' ', 10) +
+                 String(F("<-")));
 
   vector<int> v;
   v.push_back(1);
