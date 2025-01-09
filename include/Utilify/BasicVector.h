@@ -103,8 +103,10 @@ class BasicVector {
 template<typename T>
 using vector = BasicVector<T>;
 
-#elif defined(ESP32)
+#elif defined(ESP32) || defined(ARDUINO_UNOR4_MINIMA) || defined(ARDUINO_UNOWIFIR4)
 #include <vector>
 template<typename T>
 using vector = std::vector<T>;
+#else
+#error "Unsupported board"
 #endif
