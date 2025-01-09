@@ -34,8 +34,7 @@ Timer *timer3 = new Timer(5_seconds, []() {
   Serial.print(millis() / 1000.0f);
   Serial.println(" - Starting LED blink");
   timer2.start();
-  timer3->stop();
-});
+}, 1);
 TaskAggregate taskAggregate;
 void setup() {
 #ifdef ARDUINO_AVR_UNO

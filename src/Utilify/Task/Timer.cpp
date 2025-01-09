@@ -1,22 +1,28 @@
 #include <Utilify/Task/Timer.h>
 
-Timer::Timer(unsigned long interval, ActionBase<void>* action, bool autoStart)
+Timer::Timer(unsigned long interval, ActionBase<void>* action,
+             unsigned int repeatLimit, bool autoStart)
     : m_interval(interval),
       m_autoStart(autoStart),
       m_running(false),
       m_callback(nullptr),
-      m_action(action) {
+      m_action(action),
+      m_repeatCount(0),
+      m_repeatLimit(repeatLimit) {
   if (m_autoStart) {
     start();
   }
 }
 
-Timer::Timer(unsigned long interval, Callback callback, bool autoStart)
+Timer::Timer(unsigned long interval, Callback callback,
+             unsigned int repeatLimit, bool autoStart)
     : m_interval(interval),
       m_autoStart(autoStart),
       m_running(false),
       m_callback(callback),
-      m_action(nullptr) {
+      m_action(nullptr),
+      m_repeatCount(0),
+      m_repeatLimit(repeatLimit) {
   if (m_autoStart) {
     start();
   }
@@ -25,6 +31,7 @@ Timer::Timer(unsigned long interval, Callback callback, bool autoStart)
 void Timer::start() {
   m_nextTime = millis() + m_interval;
   m_running = true;
+  m_repeatCount = 0;
 }
 
 void Timer::stop() { m_running = false; }
@@ -41,6 +48,11 @@ void Timer::tick() {
         m_action->execute();
       } else if (m_callback) {
         m_callback();
+      }
+
+      m_repeatCount++;
+      if (m_repeatLimit > 0 && m_repeatCount >= m_repeatLimit) {
+        m_running = false;
       }
     }
   }
@@ -61,4 +73,8 @@ void Timer::interval(unsigned long interval) {
   if (m_running) {
     start();
   }
+}
+
+void Timer::repeatLimit(unsigned int repeatLimit) {
+  m_repeatLimit = repeatLimit;
 }

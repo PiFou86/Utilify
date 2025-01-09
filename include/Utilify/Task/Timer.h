@@ -8,8 +8,8 @@
 
 class Timer : public TaskBase {
  public:
-  Timer(unsigned long interval, ActionBase<void>* action, bool autoStart = true);
-  Timer(unsigned long interval, Callback callback, bool autoStart = true);
+  Timer(unsigned long interval, ActionBase<void>* action, unsigned int repeatLimit = 0, bool autoStart = true);
+  Timer(unsigned long interval, Callback callback, unsigned int repeatLimit = 0, bool autoStart = true);
 
   void start();
   void stop();
@@ -21,6 +21,8 @@ class Timer : public TaskBase {
 
   void interval(unsigned long interval);
 
+  void repeatLimit(unsigned int repeatLimit);
+
  private:
   unsigned long m_interval;
   unsigned long m_nextTime;
@@ -28,6 +30,8 @@ class Timer : public TaskBase {
   bool m_running;
   Callback m_callback;
   ActionBase<void>* m_action;
+  unsigned int m_repeatCount;
+  unsigned int m_repeatLimit;
 };
 
 inline constexpr unsigned long operator"" _mseconds(unsigned long long ms) {
