@@ -49,7 +49,7 @@ void setup() {
 
   Serial.println(StringUtils::padLeft("Hello", ' ', 10));
   Serial.println(StringUtils::padLeft(String(42), '0', 4));
-  Serial.println(StringUtils::padLeft("0x" + String(42), '0', 4));
+  Serial.println(String("0x") + StringUtils::padLeft(String(42), '0', 4));
   Serial.println(String(F("->")) + StringUtils::center("Hello", ' ', 10) +
                  String(F("<-")));
 

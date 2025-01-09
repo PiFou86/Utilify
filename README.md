@@ -81,7 +81,7 @@ void setup() {
 #endif
   Serial.println(StringUtils::padLeft("Hello", ' ', 10));
   Serial.println(StringUtils::padLeft(String(42), '0', 4));
-  Serial.println(StringUtils::padLeft("0x" + String(42), '0', 4));
+  Serial.println(String("0x") + StringUtils::padLeft(String(42), '0', 4));
   Serial.println(StringUtils::center("Hello", ' ', 10));
 
   vector<int> v;
@@ -118,6 +118,31 @@ void setup() {
 }
 
 void loop() { taskAggregate.tick(); }
+```
+
+This example outputs the following:
+
+```
+     Hello
+0042
+0x0042
+->  Hello   <-
+1
+2
+3
+1
+2
+3
+Hello from callback
+42
+Hello from callback with param
+Hello from callback
+42
+Time : 5.05 - Starting LED blink
+Time : 10.00 - Hello from timer
+Time : 20.00 - Hello from timer
+Time : 30.00 - Hello from timer
+...
 ```
 
 ## Utilities Overview
