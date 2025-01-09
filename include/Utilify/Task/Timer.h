@@ -19,6 +19,8 @@ class Timer : public TaskBase {
   void callback(Callback callback);
   void action(ActionBase<void>* action);
 
+  void interval(unsigned long interval);
+
  private:
   unsigned long m_interval;
   unsigned long m_nextTime;

@@ -55,3 +55,10 @@ void Timer::action(ActionBase<void>* action) {
   m_action = action;
   m_callback = nullptr;
 }
+
+void Timer::interval(unsigned long interval) {
+  m_interval = interval;
+  if (m_running) {
+    start();
+  }
+}
