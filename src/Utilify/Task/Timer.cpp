@@ -63,7 +63,7 @@ void Timer::callback(Callback callback) {
   m_action = nullptr;
 }
 
-void Timer::action(ActionBase<void>* action) {
+void Timer::callback(ActionBase<void>* action) {
   m_action = action;
   m_callback = nullptr;
 }

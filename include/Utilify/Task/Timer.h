@@ -17,7 +17,7 @@ class Timer : public TaskBase {
   void tick() override;
 
   void callback(Callback callback);
-  void action(ActionBase<void>* action);
+  void callback(ActionBase<void>* action);
 
   void interval(unsigned long interval);
 
