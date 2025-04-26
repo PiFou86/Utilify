@@ -1,0 +1,5 @@
+[wokwi]
+version = 1
+firmware = '../.pio/build/unor3/firmware.hex'
+elf = '../.pio/build/unor3/firmware.elf'
+gdbServerPort=3333
