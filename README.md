@@ -187,6 +187,17 @@ timer.start();
 
 No additional dependencies are required, making **Utilify** lightweight and easy to use.
 
+## Other Libraries
+
+- https://github.com/PiFou86/UtilifyEEPROM :
+  A library for managing EEPROM storage on Arduino and ESP32 platforms.
+- https://github.com/PiFou86/UtilifyLogger :
+  A logging library for Arduino and ESP32 platforms, providing various logging levels and formats.
+- https://github.com/PiFou86/UtilifyDigitalInput :
+  A library for managing digital inputs on Arduino and ESP32 platforms, providing debouncing and state change detection.
+- https://github.com/PiFou86/UtilifyCommandInterpreter :
+  A command interpreter library for Arduino and ESP32 platforms, allowing easy parsing and execution of commands from serial input.
+  
 ## Author
 
 **Pierre-François Léon**  
