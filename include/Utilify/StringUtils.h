@@ -4,7 +4,7 @@
 
 class StringUtils {
 public:
-  static String padLeft(const String &value, char padChar, unsigned int length);
-  static String padRight(const String &value, char padChar, unsigned int length);
-  static String center(const String &value, char padChar, unsigned int length);
+  static String padLeft(const String &value, unsigned int length, char padChar = ' ');
+  static String padRight(const String &value, unsigned int length, char padChar = ' ');
+  static String center(const String &value, unsigned int length, char padChar = ' ');
 };

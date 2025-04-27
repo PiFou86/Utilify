@@ -1,6 +1,6 @@
 #include "Utilify/StringUtils.h"
 
-String StringUtils::padLeft(const String &value, char padChar, unsigned int length) {
+String StringUtils::padLeft(const String &value, unsigned int length, char padChar) {
   String result = value;
   while (result.length() < length) {
     result = padChar + result;
@@ -8,7 +8,7 @@ String StringUtils::padLeft(const String &value, char padChar, unsigned int leng
   return result;
 }
 
-String StringUtils::padRight(const String &value, char padChar, unsigned int length) {
+String StringUtils::padRight(const String &value, unsigned int length, char padChar) {
   String result = value;
   while (result.length() < length) {
     result += padChar;
@@ -16,7 +16,7 @@ String StringUtils::padRight(const String &value, char padChar, unsigned int len
   return result;
 }
 
-String StringUtils::center(const String &value, char padChar, unsigned int length) {
+String StringUtils::center(const String &value, unsigned int length, char padChar) {
     if (value.length() >= length) {
         return value; // Si la longueur est déjà suffisante
     }
