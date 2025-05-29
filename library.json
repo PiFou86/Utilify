@@ -10,9 +10,6 @@
         "maintainer": true
       }
     ],
-    "excludeFiles": [
-      "main.cpp"
-    ],
     "repository": {
       "type": "git",
       "url": "https://github.com/PiFou86/Utilify.git"
