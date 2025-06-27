@@ -195,6 +195,8 @@ No additional dependencies are required, making **Utilify** lightweight and easy
   A logging library for Arduino and ESP32 platforms, providing various logging levels and formats.
 - https://github.com/PiFou86/UtilifyDigitalInput :
   A library for managing digital inputs on Arduino and ESP32 platforms, providing debouncing and state change detection.
+- https://github.com/PiFou86/UtilifyAnalogInput :
+  A library for managing analog inputs on Arduino and ESP32 platforms, providing debouncing and state change detection.
 - https://github.com/PiFou86/UtilifyCommandInterpreter :
   A command interpreter library for Arduino and ESP32 platforms, allowing easy parsing and execution of commands from serial input.
   
