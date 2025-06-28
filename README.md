@@ -23,7 +23,7 @@ To add **Utilify** to your PlatformIO project, include the library in your `plat
 platform = espressif32
 framework = arduino
 lib_deps =
-    https://github.com/PiFou86/Utilify.git
+    sirdrako/Utilify
 ```
 
 ### Basic Usage
