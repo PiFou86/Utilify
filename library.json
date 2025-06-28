@@ -1,6 +1,6 @@
 {
     "name": "Utilify",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Utilify provides a collection of versatile utilities designed for embedded systems, simplifying string manipulation, device management, and general-purpose tasks for Arduino and ESP32 platforms.",
     "keywords": ["string", "utilities", "embedded", "platformio", "arduino", "esp32"],
     "authors": [
