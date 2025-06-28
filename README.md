@@ -2,6 +2,8 @@
 
 **Utilify** is a versatile library providing essential utilities for embedded systems, simplifying tasks such as string manipulation and device management. It is designed to work seamlessly with **Arduino** and **ESP32** platforms, making it a valuable addition to your embedded development toolkit.
 
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/sirdrako/library/Utilify.svg)](https://registry.platformio.org/libraries/sirdrako/Utilify)
+
 ## Features
 
 - Lightweight and efficient utility library.
